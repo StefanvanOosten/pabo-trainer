@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Pabo Taaltrainer</title>
+  <meta name="description" content="Leer de kennisbasis Nederlands voor de pabo met flashcards, quizzen, rijtjes en spellen, slim herhaald.">
+  <meta name="theme-color" content="#f6f1e7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1b1a22" media="(prefers-color-scheme: dark)">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <button class="brand" data-nav="home" aria-label="Naar start">
+      <span class="brand-mark" aria-hidden="true">Aa</span>
+      <span class="brand-name">Taaltrainer</span>
+    </button>
+    <div class="topstats" id="topstats"></div>
+  </header>
+
+  <main id="view" tabindex="-1"></main>
+
+  <nav class="tabbar" aria-label="Hoofdmenu">
+    <button data-nav="home"><span aria-hidden="true">🏠</span>Start</button>
+    <button data-nav="modes"><span aria-hidden="true">🎯</span>Oefenen</button>
+    <button data-nav="library"><span aria-hidden="true">📚</span>Begrippen</button>
+    <button data-nav="progress"><span aria-hidden="true">📈</span>Voortgang</button>
+  </nav>
+
+  <div class="modal" id="modal" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-x" data-close aria-label="Sluiten">✕</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <canvas id="confetti" aria-hidden="true"></canvas>
+
+  <script src="data/concepts.js"></script>
+  <script src="data/curated.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
